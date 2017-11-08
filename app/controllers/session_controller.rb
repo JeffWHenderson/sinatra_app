@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
   get '/login' do
-    "on login page"
+    erb :'/user/login'
   end
 
   post '/login' do
