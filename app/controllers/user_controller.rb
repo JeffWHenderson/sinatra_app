@@ -13,8 +13,13 @@ class UserController < ApplicationController
        redirect '/signup'
      else
        @user = User.create(username: params[:username], email: params[:email], password: params[:password])
-       #     session[:user_id] = @user.id
-       #     redirect '/user_homepage'
+       session[:user_id] = @user.id
+       redirect '/user/homepage'
      end
+  end
+
+  get '/user/homepage' do
+    @user = User.find_by(:id => session[:user_id])
+    erb :'user/user_homepage'
   end
 end
