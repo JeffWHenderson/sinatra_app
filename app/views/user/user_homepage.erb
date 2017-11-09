@@ -1,7 +1,23 @@
+<div class="sidebar">
+<button type="button" name="Log Out"><a href="/logout">Logout</a></button>
+</div>
 <p>userobject:  <%= @user %></p>
 
-<p>userobject:  <%= @user.username %></p>
+<p>Welcome Username:  <%= @user.username %></p>
 <p>email:  <%= @user.email %></p>
 <p>secure password:  <%= @user.password_digest %></p>
 
 <p>session id:  <%= session[:user_id] %></p>
+<br>
+<div class="container">
+  <a href="/characters/all"><h1>link to all characters in database!!!!!</h1></a>
+</div>
+<br>
+<div class="container">
+  <h1>your characters</h1>
+    <ul>
+      <li>characters either a drop down menu of all characters or send to new page</li>
+    </ul>
+</div>
+<br>
+<a href="/character/new"><p>add a character link</p></a>  
