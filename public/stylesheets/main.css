@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
   }
-  
+
   table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -27,6 +27,11 @@
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
+  }
+
+  #large-box {
+    height:200px;
+    font-size:14pt;
   }
 
   .wrapper {
