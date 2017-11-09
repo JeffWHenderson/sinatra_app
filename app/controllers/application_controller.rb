@@ -13,6 +13,8 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :welcome
   end
+
+  #/////////// this shouldn't go here.  figure out why it isn't patching in CharacterController
   patch '/characters/:id' do
     @character = Character.find_by_id(params[:id])
     @character.name = params[:name]

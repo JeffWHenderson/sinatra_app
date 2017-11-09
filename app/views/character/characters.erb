@@ -1,37 +1,24 @@
 <div class="sidebar">
 <button type="button" name="Log Out"><a href="/logout">Logout</a></button>
 </div>
-<h1>Show all characters</h1>
+<h1>All Characters</h1>
 <table>
-    <tr>
-      <td>NAMES --></td>
+      <tr>
+        <td>--- NAME ---</td>
+        <td>--- TYPE ---</td>
+        <td>--- LEVEL ---</td>
+        <td>--- BELONGS TO ---</td>
+        <td>--- Page Link ---</td>
+      </tr>
+
       <% Character.all.each do |c| %>
-        <td><%= c.name %></td>
+        <tr>
+          <td><%= c.name %></td>
+          <td><%= c.race %></td>
+          <td><%= c.level %></td>
+          <td><%= User.find_by_id("#{c.user_id}").username %></td>
+          <td><a href="/characters/<%= c.id %>">view</a>  </td>>
+        </tr>
       <% end %>
-    </tr>
-    <tr>
-      <td>TYPE --></td>
-      <% Character.all.each do |c| %>
-        <td><%= c.race %></td>
-      <% end %>
-    </tr>
-    <tr>
-      <td>LEVEL --></td>
-      <% Character.all.each do |c| %>
-        <td><%= c.user_id %></td>
-      <% end %>
-    </tr>
-    <tr>
-      <td>USER'S NAME --></td>
-      <% Character.all.each do |c| %>
-        <td><%= User.find_by_id("#{c.user_id}").username %></td>
-      <% end %>
-    </tr>
-    <tr>
-      <td>Characters Page --></td>
-      <% Character.all.each do |c| %>
-      <td><a href="/characters/<%= c.id %>">view</a>  </td>>
-      <% end %>
-    </tr>
-</ul>
+
 </table>
