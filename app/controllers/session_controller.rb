@@ -10,7 +10,7 @@ class SessionController < ApplicationController
 
   post '/login' do
     @user = User.find_by(username: params[:username])
-    if @user # add code for authentification ---  && user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect '/user/homepage'
     else

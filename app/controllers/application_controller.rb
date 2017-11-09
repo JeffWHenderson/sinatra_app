@@ -31,4 +31,15 @@ class ApplicationController < Sinatra::Base
     #right here is where the edit form redirects and the character needs to be patched
     erb :'/character/show_character'
   end
+
+  helpers do
+
+    def logged_in?
+      !!session[:user_id]
+    end
+
+    def current_user
+      User.find(session[:user_id])
+    end
+  end
 end
