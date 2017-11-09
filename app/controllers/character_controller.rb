@@ -9,6 +9,12 @@ class CharacterController < ApplicationController
         erb :'/character/create_character'
       end
 
+      post '/characters' do
+        @character = Character.new
+        @character.save
+        redirect :"/characters/#{@character.id}"
+      end
+
         # ///////// READ ///////////
       get '/characters/:id' do
         @character = Character.find_by_id(params[:id])
@@ -19,6 +25,7 @@ class CharacterController < ApplicationController
       get '/characters/:id/update' do
         @character = Character.find_by_id(params[:id])
         erb :'/character/edit_character'
+
       end
           # ////////this route wasn't working until i put it in ApplicationController????
       patch '/characters/:id' do

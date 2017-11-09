@@ -1,4 +1,50 @@
 <div class="sidebar">
 <button type="button" name="Log Out"><a href="/logout">Logout</a></button>
+<br><br><br><br><br><br><br><br><br><br>
 </div>
-character_new_form
+
+<h1>CREATE A NEW CHARACTER!</h1>
+<br><br>
+<form action="/characters" method="post">
+
+  <label> character name </label>
+  <input type="text" name="name" placeholder=" name here  ">
+
+  <label>Character Type</label>
+    <input list="race" name="race" placeholder=" type here ">
+    <datalist id="race">
+      <option value="Elf">
+      <option value="Human">
+      <option value="Gnome">
+      <option value="Halfling">
+      <option value="Half-Orc">
+    </datalist>
+
+<br><br><br>
+  <label for="">description</label><br>
+  <textarea name="description" rows="8" cols="80"></textarea>
+
+<br><br><br>
+  <label>Level</label>
+  <input type="number"  min="0" max="99" name="level">
+
+  <label>strength</label>
+  <input type="number"   min="0" max="99" name="strength" >
+
+  <label>Dexterity</label>
+  <input type="number"   min="0" max="99" name="dexterity">
+
+  <label>Wisdom</label>
+  <input type="number"   min="0" max="99" name="wisdom">
+
+  <label>Charisma</label>
+  <input type="number"   min="0" max="99" name="charisma">
+
+  <label>Constitution</label>
+  <input type="number"   min="0" max="99" name="constitution">
+
+  <label>intelligence</label>
+  <input type="number"   min="0" max="99" name="intelligence" >
+<br><br><br>
+    <input type="submit" value="submit">
+</form>
