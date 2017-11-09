@@ -1,5 +1,5 @@
 <div class="sidebar">
-<button type="button" name="Log Out"><a href="/logout">Logout</a></button>
+<a class="btn" href="/logout">Logout</a>
 <br><br><br><br><br><br><br><br><br><br>
 </div>
 
@@ -46,10 +46,11 @@
   <label>intelligence</label>
   <input type="number"   min="0" max="99" name="intelligence" value="<%= @character.intelligence %>">
 <br><br><br>
-    <input type="submit" value="submit">
+    <input class="btn" type="submit" value="submit">
 </form>
+<br><br><br>
 
 <form action="/characters/<%= @character.id %>/delete" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" value="DELETE CHARACTER">
+  <input class="btn-danger" type="submit" value="DELETE"><p>warning, this will delete your character</p>
 </form>

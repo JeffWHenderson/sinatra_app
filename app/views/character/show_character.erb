@@ -1,5 +1,5 @@
 <div class="sidebar">
-<button type="button" name="Log Out"><a href="/logout">Logout</a></button>
+<a class="btn" href="/logout">Logout</a>
 <br><br><br>
 <p>intelligence: <%= @character.intelligence %></p>
 <p>dexterity: <%= @character.dexterity %></p>
@@ -19,4 +19,4 @@ User.characters_show
 <br><br><br>
 
 
-<a href="/characters/<%= @character.id %>/update"><button type="button" name="button">to edit page</button></a>
+<a class="btn" href="/characters/<%= @character.id %>/update">to edit page</a>
