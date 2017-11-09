@@ -6,13 +6,18 @@ class CharacterController < ApplicationController
 
       # ///////// CREATE ///////////
       get '/characters/new' do
+        @user = User.find_by_id(session[:user_id])
+
         erb :'/character/create_character'
       end
 
-      post '/characters' do
+      post '/characters/new' do
         @character = Character.new
-        @character.save
-        redirect :"/characters/#{@character.id}"
+        @character.fill(params)
+        @character.user_id = session[:user_id]
+
+        #@character.save
+        #redirect "/characters"
       end
 
         # ///////// READ ///////////
