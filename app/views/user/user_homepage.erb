@@ -1,23 +1,14 @@
 <div class="sidebar">
 <button type="button" name="Log Out"><a href="/logout">Logout</a></button>
+<br><br><br><br><br><br><br><br>
 </div>
-<p>userobject:  <%= @user %></p>
-
-<p>Welcome Username:  <%= @user.username %></p>
+<h1>Welcome <%= @user.username %></h1>
 <p>email:  <%= @user.email %></p>
 <p>secure password:  <%= @user.password_digest %></p>
 
-<p>session id:  <%= session[:user_id] %></p>
+<p>user id: <%= session[:user_id] %></p>
 <br>
-<div class="container">
-  <a href="/characters"><h1>link to all characters in database!!!!!</h1></a>
-</div>
+  <a href="/characters"><button class="btn" type="button" name="button">ALL CHARACTERS</button></a>
 <br>
-<div class="container">
-  <h1>your characters</h1>
-    <ul>
-      <li>characters either a drop down menu of all characters or send to new page</li>
-    </ul>
-</div>
 <br>
-<a href="/characters/new"><p>add a character link</p></a>
+<a href="/characters/new"><button type="button" name="button">Create a Character</button></a>
