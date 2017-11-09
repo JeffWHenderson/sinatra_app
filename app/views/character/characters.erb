@@ -16,8 +16,7 @@
           <td><%= c.name %></td>
           <td><%= c.race %></td>
           <td><%= c.level %></td>
-          <!--  This needs to be fixed to show the .username... new characters aren't being saved to a user-->
-          <td><%= User.find_by_id("#{c.user_id}") %></td>
+          <td><%= User.find_by_id("#{c.user_id}").username %></td>
           <td><a href="/characters/<%= c.id %>">view</a>  </td>>
         </tr>
       <% end %>

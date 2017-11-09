@@ -32,6 +32,13 @@ class ApplicationController < Sinatra::Base
     erb :'/character/show_character'
   end
 
+
+    delete '/characters/:id/delete' do
+      @character = Character.find_by_id(params[:id])
+      @character.delete
+      redirect to '/characters'
+    end
+
   helpers do
 
     def logged_in?

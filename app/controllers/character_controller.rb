@@ -41,7 +41,5 @@ class CharacterController < ApplicationController
       end
 
             # ///////// DESTROY ///////////
-      delete '/characters/:id/delete' do
-       "The last thing to do i think!!!"
-      end
+
 end
