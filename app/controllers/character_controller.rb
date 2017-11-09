@@ -20,6 +20,10 @@ class CharacterController < ApplicationController
         erb :'/character/edit_character'
       end
 
+      post '/characters/:id/update' do
+        erb :'/character/edit_character'
+      end
+
             # ///////// DESTROY ///////////
       delete '/characters/:id/delete' do
        "The last thing to do i think!!!"

@@ -5,5 +5,5 @@ User.characters_show
 <h1>name: <%= @character.name %></h1>
 <h1>type: <%= @character.race %></h1>
 <h1>level: <%= @character.level %></h1>
-#select all with user_id == session id
-#display each
+
+<a href="/characters/<%= @character.id %>/update"><button type="button" name="button">to edit page</button></a>
