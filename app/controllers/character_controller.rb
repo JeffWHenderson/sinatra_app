@@ -17,11 +17,16 @@ class CharacterController < ApplicationController
 
           # ///////// UPDATE ///////////
       get '/characters/:id/update' do
+        @character = Character.find_by_id(params[:id])
         erb :'/character/edit_character'
       end
-
-      post '/characters/:id/update' do
-        erb :'/character/edit_character'
+          # ////////this route wasn't working until i put it in ApplicationController????
+      patch '/characters/:id' do
+        @character = Character.find_by_id(params[:id])
+        @character.name = params[:name]
+        @character.save
+        #right here is where the edit form redirects and the character needs to be patched
+        erb :'/character/show_character'
       end
 
             # ///////// DESTROY ///////////

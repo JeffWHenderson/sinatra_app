@@ -8,4 +8,5 @@ end
 use SessionController
 use UserController
 use CharacterController
+use Rack::MethodOverride
 run ApplicationController

@@ -13,5 +13,11 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :welcome
   end
-
+  patch '/characters/:id' do
+    @character = Character.find_by_id(params[:id])
+    @character.name = params[:name]
+    @character.save
+    #right here is where the edit form redirects and the character needs to be patched
+    erb :'/character/show_character'
+  end
 end
