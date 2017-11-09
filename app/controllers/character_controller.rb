@@ -11,6 +11,7 @@ class CharacterController < ApplicationController
 
         # ///////// READ ///////////
       get '/characters/:id' do
+        @character = Character.find_by_id(params[:id])
         erb :'/character/show_character'
       end
 
