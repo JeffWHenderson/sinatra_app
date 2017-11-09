@@ -9,6 +9,7 @@ character_edit_form
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label> character name </label>
   <input type="text" name="name" value="<%= @character.name  %>">
+
   <label>Character Type</label>
     <input list="race" value="<%= @character.race %>">
     <datalist id="race">
@@ -18,21 +19,29 @@ character_edit_form
       <option value="Halfling">
       <option value="Half-Orc">
     </datalist>
+
 <br><br><br>
   <label for="">description</label><br>
-  <textarea id="description" name="name" rows="8" cols="80"></textarea>
-  <input type="submit" value="submit">
+  <textarea id="description" name="description" value="<%= @character.description %>" rows="8" cols="80"></textarea>
+
+<br><br><br>
+  <label>Level</label>
+  <input type="number"  min="0" max="99" name="level" value="<%= @character.level %>">
+
+  <label>strength</label>
+  <input type="number"   min="0" max="99" name="strength" value="<%= @character.strength %>">
+
+  <label>Dexterity</label>
+  <input type="number"   min="0" max="99" name="dexterity" value="<%= @character.dexterity %>">
+
+  <label>Wisdom</label>
+  <input type="number"   min="0" max="99" name="wisdom" value="<%= @character.wisdom %>">
+
+  <label>Charisma</label>
+  <input type="number"   min="0" max="99" name="charisma" value="<%= @character.charisma %>">
+
+  <label>Constitution</label>
+  <input type="number"   min="0" max="99" name="constitution" value="<%= @character.constitution %>">
+<br><br><br>
+    <input type="submit" value="submit">
 </form>
-
-
-<!-- t.string  "name"
-t.integer "strength"
-t.integer "intelligence"
-t.integer "dexterity"
-t.integer "wisdom"
-t.integer "charisma"
-t.integer "constitution"
-t.integer "user_id"
-t.string  "race"
-t.string  "description"
-t.integer "level" -->
