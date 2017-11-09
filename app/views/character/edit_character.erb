@@ -11,7 +11,7 @@ character_edit_form
   <input type="text" name="name" value="<%= @character.name  %>">
 
   <label>Character Type</label>
-    <input list="race" value="<%= @character.race %>">
+    <input list="race" name="race" value="<%= @character.race %>">
     <datalist id="race">
       <option value="Elf">
       <option value="Human">
@@ -22,7 +22,7 @@ character_edit_form
 
 <br><br><br>
   <label for="">description</label><br>
-  <textarea id="description" name="description" value="<%= @character.description %>" rows="8" cols="80"></textarea>
+  <textarea name="description" rows="8" cols="80"><%= @character.description %></textarea>
 
 <br><br><br>
   <label>Level</label>
@@ -42,6 +42,9 @@ character_edit_form
 
   <label>Constitution</label>
   <input type="number"   min="0" max="99" name="constitution" value="<%= @character.constitution %>">
+
+  <label>intelligence</label>
+  <input type="number"   min="0" max="99" name="intelligence" value="<%= @character.intelligence %>">
 <br><br><br>
     <input type="submit" value="submit">
 </form>

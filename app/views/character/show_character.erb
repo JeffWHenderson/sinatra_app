@@ -6,4 +6,17 @@ User.characters_show
 <h1>type: <%= @character.race %></h1>
 <h1>level: <%= @character.level %></h1>
 
+<h1>description: <%= @character.description %></h1>
+<br><br><br>
+<p>strength: <%= @character.strength  %></p>
+
+<p>intelligence: <%= @character.intelligence %></p>
+<p>dexterity: <%= @character.dexterity %></p>
+<p>wisdom: <%= @character.wisdom %></p>
+<p>Charisma: <%= @character.charisma %></p>
+<p>Constitution: <%= @character.constitution %></p>
+
+
+
+
 <a href="/characters/<%= @character.id %>/update"><button type="button" name="button">to edit page</button></a>
