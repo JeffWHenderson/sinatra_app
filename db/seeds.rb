@@ -7,13 +7,5 @@ character_1 = Character.create(:name => "Barry", :strength => 10,:intelligence =
 character_2 = Character.create(:name => "Sara", :strength => 10,:intelligence => 10,:dexterity => 10,:wisdom => 10,:charisma => 10,:constitution => 10, :user_id => user_2.id)
 character_3 = Character.create(:name => "Samantha", :strength => 10,:intelligence => 10,:dexterity => 10,:wisdom => 10,:charisma => 10,:constitution => 10, :user_id => user_2.id)
 character_4 = Character.create(:name => "Rachel", :strength => 10,:intelligence => 10,:dexterity => 10,:wisdom => 10,:charisma => 10,:constitution => 10, :user_id => user_4.id)
-character_4 = Character.create(:name => "Charlie Day", :strength => 8,:intelligence => 2,:dexterity => 2,:wisdom => 1,:charisma => 100,:constitution => 8, :user_id => user_4.id)
-character_4 = Character.create(:name => "Jerome", :strength => 10,:intelligence => 10,:dexterity => 10,:wisdom => 10,:charisma => 10,:constitution => 10, :user_id => user_4.id)
-t.string  "name"
-t.integer "strength"
-t.integer "intelligence"
-t.integer "dexterity"
-t.integer "wisdom"
-t.integer "charisma"
-t.integer "constitution"
-t.integer "user_id"
+character_5 = Character.create(:name => "Charlie Day", :strength => 8,:intelligence => 2,:dexterity => 2,:wisdom => 1,:charisma => 100,:constitution => 8, :user_id => user_4.id)
+character_6 = Character.create(:name => "Jerome", :strength => 10,:intelligence => 10,:dexterity => 10,:wisdom => 10,:charisma => 10,:constitution => 10, :user_id => user_4.id)
