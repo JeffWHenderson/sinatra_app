@@ -21,6 +21,7 @@
     width: 100%;
   }
 
+
   /* --- Welcome Page Styles --- */
 
 .btn-danger {
@@ -78,6 +79,13 @@
     font-family: Sans-Serif;
     font-weight: 200;
     line-height: 18px;
+  }
+
+  .err {
+    font-size: 40px;
+    text-align: center;
+    color: red;
+    padding-top:20px;
   }
 
   .wrapper {

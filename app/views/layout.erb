@@ -13,6 +13,11 @@
 
   <link rel="stylesheet" href="/stylesheets/main.css" />
 </head>
+
+<% if flash.has?(:message) %>
+  <h3 class="err" ><%= flash[:message] %></h3>
+<% end %>
+
 <body>
   <div class="wrapper">
 
