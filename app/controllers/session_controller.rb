@@ -1,7 +1,7 @@
 class SessionController < ApplicationController
+
   get '/login' do
-    session.clear
-    if !!session[:user_id]
+    if !!session[:user_id] # use logged in helper here
       redirect '/user/homepage'
     else
       erb :'/user/login'

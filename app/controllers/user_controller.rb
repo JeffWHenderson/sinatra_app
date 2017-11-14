@@ -1,15 +1,21 @@
 class UserController < ApplicationController
 
   get '/signup' do
-    erb :'/user/signup'
+    if logged_in?
+      redirect '/user/homepage'
+    else
+      erb :'/user/signup'
+    end
   end
 
   post '/signup' do
-    #checks for unique username..
-    #creates an instance of the User class
-    #saves to database
-    #redirects either Valid? => UserHomePage NotValid => SignUp + flash Message
+    # //// add flash messages
+    # //// elsif block isn't getting hit yet
      if params[:username] == "" || params[:email] == "" || params[:password] == ""
+       "flash message you can't have a blank field"
+       redirect '/signup'
+     elsif params[:username] == User.all.select { |n| n.username }
+       "flash message that username is taken"
        redirect '/signup'
      else
        @user = User.create(username: params[:username], email: params[:email], password: params[:password])
@@ -19,7 +25,12 @@ class UserController < ApplicationController
   end
 
   get '/user/homepage' do
-    @user = User.find_by(:id => session[:user_id])
-    erb :'user/user_homepage'
+    # ///////// add flash message and redirect to login
+    if logged_in?
+      @user = User.find_by(:id => session[:user_id])
+      erb :'user/user_homepage'
+    else
+      "you must be logged in to view this page"
+    end
   end
 end
