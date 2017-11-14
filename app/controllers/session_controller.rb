@@ -1,5 +1,8 @@
-class SessionController < ApplicationController
 
+
+class SessionController < ApplicationController
+  use Rack::Flash
+    
   get '/login' do
     if !!session[:user_id] # use logged in helper here
       redirect '/user/homepage'

@@ -1,4 +1,8 @@
-<div class="sidebar">
+  <% if flash.has?(:message) %>
+    <h3><%= flash[:message] %></h3>
+  <% end %>
+
+<div class="sidebar"?
   <h1>LOGIN</h1>
   <form class="" action="/login" method="post">
     <p><input type="text" name="username" placeholder="username"></p>

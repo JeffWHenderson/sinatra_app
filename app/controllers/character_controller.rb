@@ -1,4 +1,7 @@
+require 'rack-flash'
+
 class CharacterController < ApplicationController
+      use Rack::Flash
 
       get '/characters' do
         erb :"/character/characters"
@@ -28,14 +31,14 @@ class CharacterController < ApplicationController
           @character = Character.find_by_id(params[:id])
           erb :'/character/show_character'
         else
-                  # //////////////////// add flash message here ///////////////
+          flash[:message] = "must be logged in to see this page"        # //////////////////// add flash message here ///////////////
           redirect '/login'
         end
       end
 
           # ///////// UPDATE ///////////
       get '/characters/:id/update' do
-        
+
         @character = Character.find_by_id(params[:id])
         if logged_in?
           erb :'/character/edit_character'
