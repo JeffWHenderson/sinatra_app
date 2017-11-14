@@ -24,25 +24,28 @@ class CharacterController < ApplicationController
 
         # ///////// READ ///////////
       get '/characters/:id' do
-        @character = Character.find_by_id(params[:id])
-        erb :'/character/show_character'
+        if logged_in?
+          @character = Character.find_by_id(params[:id])
+          erb :'/character/show_character'
+        else
+                  # //////////////////// add flash message here ///////////////
+          redirect '/login'
+        end
       end
 
           # ///////// UPDATE ///////////
       get '/characters/:id/update' do
+        
         @character = Character.find_by_id(params[:id])
-        erb :'/character/edit_character'
-
-      end
-          # ////////this route wasn't working until i put it in ApplicationController????
-      patch '/characters/:id' do
-        @character = Character.find_by_id(params[:id])
-        @character.name = params[:name]
-        @character.save
-        #right here is where the edit form redirects and the character needs to be patched
-        erb :'/character/show_character'
+        if logged_in?
+          erb :'/character/edit_character'
+        else
+            # //////////////////// add flash message here ///////////////
+          redirect '/login'
+        end
       end
 
+                  #/////////////// update and destroy routes go here if bug is fixed //////////////
             # ///////// DESTROY ///////////
 
 end
