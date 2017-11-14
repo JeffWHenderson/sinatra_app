@@ -14,7 +14,7 @@ class UserController < ApplicationController
      if params[:username] == "" || params[:email] == "" || params[:password] == ""
        flash[:message] = "all fields must be filled out "  # ////////////////////// test this ///////////////////
        redirect '/signup'
-     elsif params[:username] == @user.username
+     elsif params[:username] == User.all.detect { |u| u.username }
         flash[:message] = "Username is already take" # ////////////////////// test this ///////////////////
         redirect '/signup'
      else
