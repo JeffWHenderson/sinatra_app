@@ -13,7 +13,7 @@ class CharacterController < ApplicationController
         if logged_in?
           erb :'/character/create_character'
         else
-          #      /////////////////////// flash message here //////////////////
+          flash[:message] = "must be logged in to see this page" #      /////////////////////// flash message here //////////////////
           redirect '/login'
         end
       end
@@ -43,7 +43,7 @@ class CharacterController < ApplicationController
         if logged_in?
           erb :'/character/edit_character'
         else
-            # //////////////////// add flash message here ///////////////
+            flash[:message] = "must be logged in to see this page"  # //////////////////// add flash message here ///////////////
           redirect '/login'
         end
       end

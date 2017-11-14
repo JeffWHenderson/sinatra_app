@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
       erb :'/character/show_character'
     else
       redirect '/characters'
-      # //////////////////////////// put flash message here ////////////////////////////
+        flash[:message] = "you may only update characters that belong to you" # //////////////////////////// put flash message here ///////
     end
   end
 

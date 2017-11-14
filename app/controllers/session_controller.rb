@@ -2,7 +2,7 @@
 
 class SessionController < ApplicationController
   use Rack::Flash
-    
+
   get '/login' do
     if !!session[:user_id] # use logged in helper here
       redirect '/user/homepage'
@@ -17,6 +17,7 @@ class SessionController < ApplicationController
       session[:user_id] = @user.id
       redirect '/user/homepage'
     else
+      flash[:message] = "authentification failed"
       redirect '/signup'
     end
   end
