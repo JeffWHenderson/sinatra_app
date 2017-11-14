@@ -15,8 +15,7 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  #/////////// this shouldn't go here.  figure out why it isn't patching in CharacterController
-
+              # /////////// characters update and delete //////////////
   patch '/characters/:id' do
     @character = Character.find_by_id(params[:id])
 

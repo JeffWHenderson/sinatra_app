@@ -53,7 +53,4 @@ class CharacterController < ApplicationController
         end
       end
 
-                  #/////////////// update and destroy routes go here if bug is fixed //////////////
-            # ///////// DESTROY ///////////
-
 end
