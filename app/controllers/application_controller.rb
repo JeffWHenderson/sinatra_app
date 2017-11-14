@@ -22,18 +22,25 @@ class ApplicationController < Sinatra::Base
 
     if "#{@character.user_id}" == "#{session[:user_id]}"
       @character.fill(params)
+      flash[:message] = "character has been updated"
       erb :'/character/show_character'
     else
+      flash[:message] = "Sorry you may only update characters that belong to you"
       redirect '/characters'
-        flash[:message] = "you may only update characters that belong to you" # //////////////////////////// put flash message here ///////
     end
   end
 
 
     delete '/characters/:id/delete' do
       @character = Character.find_by_id(params[:id])
-      @character.delete
-      redirect to '/characters'
+      if "#{@character.user_id}" == "#{session[:user_id]}"
+        @character.delete
+        flash[:message] = "Your character has been deleted"
+        redirect to '/characters'
+      else
+        flash[:message] = "Sorry you may only update characters that belong to you"
+        redirect 'characters'
+      end
     end
 
   helpers do

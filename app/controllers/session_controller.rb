@@ -17,7 +17,7 @@ class SessionController < ApplicationController
       session[:user_id] = @user.id
       redirect '/user/homepage'
     else
-      flash[:message] = "authentification failed"
+      flash[:message] = "Authentification failed for login. Here is the Sign Up page"
       redirect '/signup'
     end
   end

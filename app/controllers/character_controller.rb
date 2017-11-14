@@ -4,7 +4,12 @@ class CharacterController < ApplicationController
       use Rack::Flash
 
       get '/characters' do
-        erb :"/character/characters"
+        if logged_in?
+          erb :"/character/characters"
+        else
+          flash[:message] = "Please Log In or Sign Up to see this page"
+          redirect '/login'
+        end
       end
 
       # ///////// CREATE ///////////
@@ -13,7 +18,7 @@ class CharacterController < ApplicationController
         if logged_in?
           erb :'/character/create_character'
         else
-          flash[:message] = "must be logged in to see this page" #      /////////////////////// flash message here //////////////////
+          flash[:message] = "Please Log In or Sign Up to see this page"
           redirect '/login'
         end
       end
@@ -31,7 +36,7 @@ class CharacterController < ApplicationController
           @character = Character.find_by_id(params[:id])
           erb :'/character/show_character'
         else
-          flash[:message] = "must be logged in to see this page"        # //////////////////// add flash message here ///////////////
+          flash[:message] = "Please Log In or Sign Up to see this page"
           redirect '/login'
         end
       end
@@ -43,7 +48,7 @@ class CharacterController < ApplicationController
         if logged_in?
           erb :'/character/edit_character'
         else
-            flash[:message] = "must be logged in to see this page"  # //////////////////// add flash message here ///////////////
+          flash[:message] = "Please Log In or Sign Up to see this page"
           redirect '/login'
         end
       end
