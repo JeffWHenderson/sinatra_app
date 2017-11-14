@@ -12,5 +12,6 @@ class Character < ActiveRecord::Base
     self.charisma = params[:charisma]
     self.constitution = params[:constitution]
     self.level = params[:level]
+    self.save
   end
 end
